@@ -33,7 +33,7 @@ acceptance_testing:
             # selenium_grid: false
             # browser_stack: false
             tasks:
-              - task: ansible-playbook -i inventory deploy.yml -e artifactory_url=https://maven.etb.tieto.com/artifactory/andon -e apikey=$TESTDROID_APIKEY -e build_id=$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER -e username=$ARTIFACTORY_USER -e passwd=$ARTIFACTORY_PASSWD -vvvv
+              - task: ansible-playbook -i ansible-scripts/inventory ansible-scripts/deploy.yml -e artifactory_url=https://maven.etb.tieto.com/artifactory/andon -e apikey=$TESTDROID_APIKEY -e build_id=$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER -e username=$ARTIFACTORY_USER -e passwd=$ARTIFACTORY_PASSWD -vvvv
                 build_path: ansible-scripts
                 run_if_conditions: passed
       - stage: AcceptanceTesting
@@ -43,7 +43,7 @@ acceptance_testing:
             # owasp_zap: true
             # browser_stack: false
             tasks:
-              - task: robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable BUILD_ID:$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER ecommerce.robot
+              - task: robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable BUILD_ID:$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER robotframework/ecommerce.robot
                 build_path: robotframework
                 run_if_conditions: passed
   selenium:

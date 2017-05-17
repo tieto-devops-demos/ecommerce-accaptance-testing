@@ -12,8 +12,8 @@ pre_stage:
  go_cd_agent_props:
    - ansible
  custom_cmd:
-   - pip install robotframework
-   - pip install robotframework-appiumlibrary
+   - sudo pip install robotframework
+   - sudo pip install robotframework-appiumlibrary
 
 acceptance_testing:
   compose_file_path: dockerfiles

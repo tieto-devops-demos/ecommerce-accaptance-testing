@@ -2,10 +2,10 @@ general:
   whitelist: true
   pipeline_base_name: eCommerceAcceptance
   dependency:
-   - Catalog [PostStage]
-   - Customer [PostStage]
-   - Order [PostStage]
-   - Zuul [PostStage]
+  #  - Catalog [PostStage]
+  #  - Customer [PostStage]
+  #  - Order [PostStage]
+  #  - Zuul [PostStage]
    - AndroidApp [BuildAPK]
 
 pre_stage:

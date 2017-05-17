@@ -43,7 +43,7 @@ acceptance_testing:
             # owasp_zap: true
             # browser_stack: false
             tasks:
-              - task: robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable BUILD_ID:$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER ecommerce.robot
+              - task: robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable BUILD_ID:$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER robotframework/android/ecommerce.robot
                 build_path: robotframework
                 run_if_conditions: passed
   selenium:

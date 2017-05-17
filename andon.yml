@@ -1,6 +1,6 @@
 general:
   whitelist: true
-  pipeline_base_name: eCommerce Acceptance
+  pipeline_base_name: eCommerceAcceptance
   dependency:
    - Catalog [PostStage]
    - Customer [PostStage]

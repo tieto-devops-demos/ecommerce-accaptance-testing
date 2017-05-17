@@ -33,7 +33,7 @@ acceptance_testing:
             # selenium_grid: false
             # browser_stack: false
             tasks:
-              - task: ansible-playbook -i inventory deploy.yml -e artifactory_url=https://maven.etb.tieto.com/artifactory/andon -e apikey=$TESTDROID_APIKEY: -e build_id=$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER -e username=$ARTIFACTORY_USER -e passwd=$ARTIFACTORY_PASSWD -vvvv
+              - task: ansible-playbook -i inventory deploy.yml -e artifactory_url=https://maven.etb.tieto.com/artifactory/andon -e apikey=$TESTDROID_APIKEY -e build_id=$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER -e username=$ARTIFACTORY_USER -e passwd=$ARTIFACTORY_PASSWD -vvvv
                 build_path: ansible-scripts
                 run_if_conditions: passed
       - stage: AcceptanceTesting

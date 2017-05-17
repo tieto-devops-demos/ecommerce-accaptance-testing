@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  vars:
+    - artifactory_url: "https://maven.etb.tieto.com/artifactory/andon"
+    - apikey: "{{ apikey }}"
+    - version: "{{lookup('env','version')}}"
+    - apk_file: "andon/ecommerce/0.0.1-30/ecommerce-{{ version }}.apk"
+    - username: "{{lookup('env','username')}}"
+    - passwd: "{{lookup('env','passwd')}}"
+    - headers: "Accept: application/json"
+
+  tasks:
+
+  - name: Download the APK from Artifactory
+    shell: curl -u{{ username }}:{{ passwd }} "{{ artifactory_url }}/{{ apk_file }}" -o /var/tmp/ecommerce.apk
+
+  - name: Upload APK to Bitbar cloud
+    shell: curl -H {{ headers }} -u {{ apikey }} -F myAppFile=@"/var/tmp/ecommerce.apk" http://appium.testdroid.com/upload
+    register: output
+
+  - set_fact:
+      session_id: "{{ output.stdout | from_json | json_query(id_query) }}"
+    vars:
+      id_query: "value.uploads.myAppFile"
+
+  - debug: var=session_id
+
+  - name: Set environment variable
+    environment:
+      BITBAR_SESSION: "{{ session_id }}" 

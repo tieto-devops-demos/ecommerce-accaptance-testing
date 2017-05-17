@@ -1,0 +1,8 @@
+# robotframework logs and reports #
+*.xml
+*.html
+
+# Ansible retry files #
+*.retry
+
+.DS_Store

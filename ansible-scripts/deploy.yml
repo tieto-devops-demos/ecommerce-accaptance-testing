@@ -15,7 +15,7 @@
     shell: curl -u{{ username }}:{{ passwd }} "{{ artifactory_url }}/{{ apk_file }}" -o /var/tmp/ecommerce-0.0.1-{{ build_id }}.apk
 
   - name: Upload APK to Bitbar cloud
-    shell: curl -s --user "{{ apikey }}:" -F myAppFile=@"/var/tmp/ecommerce-0.0.1-{{ build_id }}.apk" http://appium.testdroid.com/upload
+    shell: curl -H "Accept: application/json" --user "{{ apikey }}:" -F myAppFile=@"/var/tmp/ecommerce-0.0.1-{{ build_id }}.apk" http://appium.testdroid.com/upload
     register: output
     failed_when: output.rc != 0
 

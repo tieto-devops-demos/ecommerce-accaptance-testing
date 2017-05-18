@@ -25,3 +25,8 @@
       id_query: "value.uploads.myAppFile"
 
   - debug: var=session_id
+
+  - name: Write sessionid to file
+    copy:
+      content: session_id
+      dest: /var/tmp/session.id

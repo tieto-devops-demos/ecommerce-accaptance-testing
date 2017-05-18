@@ -32,7 +32,7 @@ Open eCommerce Application
 Open eCommerce Application At Bitbar
     Open Application  ${REMOTE_URL}  platformName=${PLATFORM_NAME_ANDROID}  testdroid_apiKey=${TESTDROID_APIKEY}
     ...   testdroid_target=android  testdroid_project=eCommerce Android  testdroid_testrun=build:${BUILD_ID}  testdroid_device=${DEVICE_NAME_ANDROID}
-    ...   testdroid_app=latest  deviceName=${DEVICE_NAME_ANDROID}
+    ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
     Wait Until Page Contains  Ecommerce  5s
 

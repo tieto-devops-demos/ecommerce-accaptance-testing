@@ -4,7 +4,7 @@
     - artifactory_url: "https://maven.etb.tieto.com/artifactory/andon/"
     - apikey: "{{ lookup('env'.'apikey') }}"
     - build_id: "{{lookup('env','build_id')}}"
-    - apk_file: "com/tieto/ecommerce/0.0.1-{{ build_id }}/ecommerce-0.0.1-{{ build_id }}.apk"
+    - apk_file: "com/tieto/andon/ecommerce/0.0.1-{{ build_id }}/ecommerce-0.0.1-{{ build_id }}.apk"
     - username: "{{lookup('env','username')}}"
     - passwd: "{{lookup('env','passwd')}}"
     - headers: "Accept: application/json"

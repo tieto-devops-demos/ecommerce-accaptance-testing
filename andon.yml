@@ -14,6 +14,7 @@ pre_stage:
  custom_cmd:
    - sudo pip install robotframework
    - sudo pip install robotframework-appiumlibrary
+   - sudo chown -R go:go /var/tmp
 
 acceptance_testing:
   compose_file_path: dockerfiles

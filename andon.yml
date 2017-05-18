@@ -43,7 +43,7 @@ acceptance_testing:
             # selenium_grid: false
             # owasp_zap: true
             # browser_stack: false
-            task: export BITBAR_SESSION=$(cat /var/tmp/session.id)
+            task: export BITBAR_SESSION=$(cat "/var/tmp/session.id")
             tasks:
               - task: robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable SESSIONKEY:$BITBAR_SESSION --variable BUILD_ID:$GO_DEPENDENCY_LABEL_ANDROIDAPP_MASTER robotframework/android/ecommerce.robot
                 build_path: robotframework

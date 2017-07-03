@@ -30,6 +30,10 @@ services:
      - eureka
     expose:
       - "8080"
+  demodb:
+    image: mongo:3.5.5
+    expose:
+     - "27017"
   devicetunnel:
     image: andon.artifactorypro.shared.pub.tds.tieto.com/andon-bitbar-tunnel:1.0.0
   deviceproxy:

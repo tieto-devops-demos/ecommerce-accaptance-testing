@@ -35,6 +35,7 @@ Open eCommerce Application At Bitbar
     ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
     Wait Until Page Contains  Ecommerce  5s
+    Sleep  30s
 
 Capture Screenshot On Failure
     Capture Page Screenshot    ${SCREENSHOTS}${/}${TEST NAME}.png

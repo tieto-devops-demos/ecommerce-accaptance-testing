@@ -36,5 +36,9 @@ services:
      - "27017"
   devicetunnel:
     image: andon.artifactorypro.shared.pub.tds.tieto.com/andon-bitbar-tunnel:1.0.0
+    links:
+      - deviceproxy
   deviceproxy:
     image: andon.artifactorypro.shared.pub.tds.tieto.com/andon-bitbar-proxy:1.0.0
+    links:
+      - zuul

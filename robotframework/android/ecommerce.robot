@@ -37,8 +37,8 @@ Open eCommerce Application At Bitbar
     ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
     Wait Until Page Contains  Ecommerce  5s
-    Click Text  products
-
+    Click Element  xpath=//android.support.v7.app.ActionBar.Tab[1]
+    
 Capture Screenshot On Failure
     Capture Page Screenshot    ${SCREENSHOTS}${/}${TEST NAME}.png
 

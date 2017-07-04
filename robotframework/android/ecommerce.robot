@@ -5,22 +5,24 @@ Test Teardown  Close Application
 
 *** Variables ***
 
-#${REMOTE_URL}                   http://localhost:4723/wd/hub
-#${AUTOMATION_NAME}              appium
-#${DEVICE_NAME_ANDROID}          Nexus_5X_API_21
-${PLATFORM_NAME_ANDROID}        Android
-#${PLATFORM_VERSION_ANDROID}     5.0.2
-#${APP_ANDROID}                  /Users${/}ilppaju${/}Downloads${/}ecommerce-0.0.1-5.apk
-
-${REMOTE_URL}                   http://appium.testdroid.com/wd/hub
+${REMOTE_URL}                   http://localhost:4723/wd/hub
 ${AUTOMATION_NAME}              appium
-${DEVICE_NAME_ANDROID}          LG Google Nexus 5X 7.1.1 -Ti
+${DEVICE_NAME_ANDROID}          Nexus_5X_API_21
 ${PLATFORM_NAME_ANDROID}        Android
+${PLATFORM_VERSION_ANDROID}     5.0.2
+${APP_ANDROID}                  ${/}Users${/}ilppaju${/}Downloads${/}ecommerce-0.0.1-5.apk
+
+# ${REMOTE_URL}                   http://appium.testdroid.com/wd/hub
+# ${AUTOMATION_NAME}              appium
+# ${DEVICE_NAME_ANDROID}          LG Google Nexus 5X 7.1.1 -Ti
+# ${PLATFORM_NAME_ANDROID}        Android
 #${TESTDROID_APIKEY}
 
 *** Test Cases ***
 Validate eCommerce Products
   Open eCommerce Application at Bitbar
+  #Open eCommerce Application
+  Validate Products
 
 *** Keywords ***
 
@@ -35,7 +37,24 @@ Open eCommerce Application At Bitbar
     ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
     Wait Until Page Contains  Ecommerce  5s
-    Sleep  30s
+    Click Text  products
 
 Capture Screenshot On Failure
     Capture Page Screenshot    ${SCREENSHOTS}${/}${TEST NAME}.png
+
+Validate Products
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[1]  1
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[2]  iPod
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[3]  42.0 €
+
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[2]/android.widget.TextView[1]  2
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[2]/android.widget.TextView[2]  iPod touch
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[2]/android.widget.TextView[3]  21.0 €
+
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[3]/android.widget.TextView[1]  3
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[3]/android.widget.TextView[2]  iPod nano
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[3]/android.widget.TextView[3]  1.0 €
+
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[1]  4
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[2]  Apple TV
+  Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[3]  100.0 €

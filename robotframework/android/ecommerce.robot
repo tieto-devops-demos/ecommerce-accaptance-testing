@@ -36,7 +36,7 @@ Open eCommerce Application At Bitbar
     ...   testdroid_target=android  testdroid_project=eCommerce Android  testdroid_testrun=build:${BUILD_ID}  testdroid_device=${DEVICE_NAME_ANDROID}
     ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
-    Wait Until Page Contains  Ecommerce  5s
+    Wait Until Page Contains  eCommerce  5s
     Sleep  10s
 
 Capture Screenshot On Failure

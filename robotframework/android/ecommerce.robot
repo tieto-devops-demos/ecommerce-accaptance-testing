@@ -37,12 +37,13 @@ Open eCommerce Application At Bitbar
     ...   testdroid_app=${SESSIONKEY}  deviceName=${DEVICE_NAME_ANDROID}
 
     Wait Until Page Contains  Ecommerce  5s
-    Click Element  xpath=//android.support.v7.app.ActionBar.Tab[1]
-    
+
 Capture Screenshot On Failure
     Capture Page Screenshot    ${SCREENSHOTS}${/}${TEST NAME}.png
 
 Validate Products
+  Click Element  xpath=//android.support.v7.app.ActionBar.Tab[1]
+
   Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[1]  1
   Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[2]  iPod
   Element Text Should Be    xpath=//android.widget.RelativeLayout[1]/android.widget.TextView[3]  42.0 €

@@ -20,13 +20,13 @@ ${TESTDROID_APIKEY}
 
 *** Test Cases ***
 Validate eCommerce Products
-  #Open eCommerce Application at Bitbar
-  Open eCommerce Application
+  Open eCommerce Application at Bitbar
+  ##Open eCommerce Application
   Validate Products
 
 Validate eCommerce Customers
-#Open eCommerce Application at Bitbar
-  Open eCommerce Application
+  Open eCommerce Application at Bitbar
+  #Open eCommerce Application
   Validate Customers
 
 *** Keywords ***

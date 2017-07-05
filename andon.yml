@@ -44,7 +44,7 @@ acceptance_testing:
               test:
                 source: target/*
             tasks:
-              - task: export BITBAR_SESSION=$(cat "/var/tmp/session.id") && robot --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable SESSIONKEY:$BITBAR_SESSION --variable BUILD_ID:$GO_PIPELINE_COUNTER --outputdir target/robotframework-reports robotframework/android/ecommerce.robot
+              - task: export BITBAR_SESSION=$(cat "/var/tmp/session.id") && robot --variable REMOTE_URL:http://appium.testdroid.com/wd/hub --variable DEVICE_NAME_ANDROID:"LG Google Nexus 5X 7.1.1 -Ti" --variable TESTDROID_APIKEY:$TESTDROID_APIKEY --variable SESSIONKEY:$BITBAR_SESSION --variable BUILD_ID:$GO_PIPELINE_COUNTER --outputdir target/robotframework-reports robotframework/android/ecommerce.robot
                 build_path: robotframework
                 run_if_conditions: passed
   selenium:

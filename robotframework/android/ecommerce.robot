@@ -5,24 +5,29 @@ Test Teardown  Close Application
 
 *** Variables ***
 
-# ${REMOTE_URL}                   http://localhost:4723/wd/hub
-# ${AUTOMATION_NAME}              appium
-# ${DEVICE_NAME_ANDROID}          Nexus_5X_API_21
-# ${PLATFORM_NAME_ANDROID}        Android
-# ${PLATFORM_VERSION_ANDROID}     5.0.2
-# ${APP_ANDROID}                  ${/}Users${/}ilppaju${/}Downloads${/}ecommerce-0.0.1-5.apk
-
-${REMOTE_URL}                   http://appium.testdroid.com/wd/hub
+${REMOTE_URL}                   http://localhost:4723/wd/hub
 ${AUTOMATION_NAME}              appium
-${DEVICE_NAME_ANDROID}          LG Google Nexus 5X 7.1.1 -Ti
+${DEVICE_NAME_ANDROID}          Nexus_5X_API_21
 ${PLATFORM_NAME_ANDROID}        Android
+${PLATFORM_VERSION_ANDROID}     5.0.2
+${APP_ANDROID}                  ${/}Users${/}ilppaju${/}Downloads${/}ecommerce-0.0.1-5.apk
+
+# ${REMOTE_URL}                   http://appium.testdroid.com/wd/hub
+# ${AUTOMATION_NAME}              appium
+# ${DEVICE_NAME_ANDROID}          LG Google Nexus 5X 7.1.1 -Ti
+# ${PLATFORM_NAME_ANDROID}        Android
 # ${TESTDROID_APIKEY}
 
 *** Test Cases ***
 Validate eCommerce Products
-  Open eCommerce Application at Bitbar
-  #Open eCommerce Application
+  #Open eCommerce Application at Bitbar
+  Open eCommerce Application
   Validate Products
+
+Validate eCommerce Customers
+#Open eCommerce Application at Bitbar
+  Open eCommerce Application
+  Validate Customers
 
 *** Keywords ***
 
@@ -60,3 +65,10 @@ Validate Products
   Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[1]  4
   Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[2]  Apple TV
   Element Text Should Be    xpath=//android.widget.RelativeLayout[4]/android.widget.TextView[3]  100.0 €
+
+Validate Customers
+  Click Element  xpath=//android.support.v7.app.ActionBar.Tab[2]
+
+  Element Text Should Be    id=com.tieto.ecommerce:id/customer_list_id    2
+  Element Text Should Be    id=com.tieto.ecommerce:id/customer_list_last_name   Johnson
+  Element Text Should Be    id=com.tieto.ecommerce:id/customer_list_first_name  Rod

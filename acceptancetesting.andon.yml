@@ -5,6 +5,7 @@ pipelines:
       SONARUSER: admin
       SONARPASSWORD: admin
       BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
+      BROWSERSTACK_VARIABLES: "--key $BROWSERSTACK_KEY --verbose 3"
     group: eCommerce
     materials:
       acceptancetesting:  # this is the name of material

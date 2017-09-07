@@ -7,9 +7,20 @@ pipelines:
       BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
     group: eCommerce
     materials:
-      order:  # this is the name of material
+      acceptancetesting:  # this is the name of material
         # says about type of material and url at once
         git: https://github.com/tieto-devops-demos/microservice-demo-acceptance-tests.git
+      myupstream:
+        # type is optional here, material type is implied based on presence of pipeline and stage fields
+        # type: dependency
+        pipeline: Zuul
+        stage: build
+        pipeline: Catalog
+        stage: post
+        pipeline: Customer
+        stage: post
+        pipeline: Order
+        stage: post
     stages:
       - test: # name of stage
           jobs:

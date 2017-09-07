@@ -4,7 +4,7 @@ pipelines:
     environment_variables:
       SONARUSER: admin
       SONARPASSWORD: admin
-      BROWSERSTACK_KEY:
+      BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
     group: eCommerce
     materials:
       order:  # this is the name of material

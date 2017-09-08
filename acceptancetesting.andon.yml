@@ -53,7 +53,7 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c" 
-                    - echo bar
+                    - echo "bar foo"
 #                    - "mvn -Probot -Drobot.remote_url=http://ilpopaju1:$BROWSERSTACK_KEY@hub.browserstack.com:80/wd/hub -Drobot.order.url=http://zuul:8080/order/ -Drobot.main.url=http://zuul:8080 -Drobot.catalog_rest_url=http://catalog:8080 -Drobot.customer_rest_url=http://customer:8080 -Drobot.desired_capabilities="browserName:android,platform:ANDROID,device:Samsung Galaxy S5,browserstack.local:True,project:microservice_demo,build:$GO_PIPELINE_COUNTER,browserstack.localIdentifier:BrowserStack_Android" clean install"
             SeleniumGrid_Chrome: # name of the job
               andon: # andon job configuration

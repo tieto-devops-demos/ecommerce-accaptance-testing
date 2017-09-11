@@ -32,7 +32,7 @@ pipelines:
               andon: # andon job configuration
                 image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:17.09" # elastic agent image
                 browserstack:
-                  BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
+                  BROWSERSTACK_KEY: HEA8tMFKN6bSUyhBriQD
                   BROWSERSTACK_VARIABLES: "--key ${BROWSERSTACK_KEY} --verbose 3"
                 deploy_env:
                   docker_compose:
@@ -49,7 +49,7 @@ pipelines:
                    command: bash
                    arguments:
                     - "-c"
-                    - mvn -Probot -Drobot.remote_url=http://ilpopaju1:$BROWSERSTACK_KEY@hub.browserstack.com:80/wd/hub -Drobot.order.url=http://zuul:8080/order/ -Drobot.main.url=http://zuul:8080 -Drobot.catalog_rest_url=http://catalog:8080 -Drobot.customer_rest_url=http://customer:8080 -Drobot.desired_capabilities="browser:IE,browser_version:11.0,os:Windows,os_version:7,resolution:1024x768,browserstack.local:True,project:microservice_demo,build:$GO_PIPELINE_COUNTER,browserstack.localIdentifier:BrowserStack_IE" clean install
+                    - mvn -Probot -Drobot.remote_url=http://kallemkel1:$BROWSERSTACK_KEY@hub.browserstack.com:80/wd/hub -Drobot.order.url=http://zuul:8080/order/ -Drobot.main.url=http://zuul:8080 -Drobot.catalog_rest_url=http://catalog:8080 -Drobot.customer_rest_url=http://customer:8080 -Drobot.desired_capabilities="browser:IE,browser_version:11.0,os:Windows,os_version:7,resolution:1024x768,browserstack.local:True,project:microservice_demo,build:$GO_PIPELINE_COUNTER,browserstack.localIdentifier:BrowserStack_IE" clean install
                - exec: # indicates type of task
                    run_if: passed
                    working_directory: .

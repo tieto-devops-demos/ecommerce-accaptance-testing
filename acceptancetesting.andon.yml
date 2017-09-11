@@ -39,7 +39,6 @@ pipelines:
                    source: target/*
               tabs:
                 robot_report: robotframework-reports/report.html
-                zap_report: zap-reports/zapReport.html
               tasks:
                - exec: # indicates type of task
                    run_if: passed
@@ -73,6 +72,7 @@ pipelines:
                    source: target/*
               tabs:
                 robot_report: robotframework-reports/report.html
+                zap_report: zap-reports/zapReport.html
               tasks:
                - exec: # indicates type of task
                    run_if: passed

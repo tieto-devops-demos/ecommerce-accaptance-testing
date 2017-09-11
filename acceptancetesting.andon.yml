@@ -1,9 +1,9 @@
 # acceptancetesting.andon.yml
 pipelines:
   AcceptanceTesting:
-    environment_variables:
-      SONARUSER: admin
-      SONARPASSWORD: admin
+#    environment_variables:
+#      SONARUSER: admin
+#      SONARPASSWORD: admin
 #    secure_variables:
 #      BROWSERSTACK_KEY: <encrypted>
     group: eCommerce

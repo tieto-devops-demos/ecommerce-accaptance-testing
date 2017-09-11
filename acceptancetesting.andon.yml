@@ -28,12 +28,12 @@ pipelines:
     stages:
       - test: # name of stage
           jobs:
-            BrwoserStack_IE: # name of the job
+            BrowserStack_IE: # name of the job
               andon: # andon job configuration
                 image: "andon.artifactorypro.shared.pub.tds.tieto.com/andon-gocd-agent-java8-maven3:17.09" # elastic agent image
                 browserstack:
                   BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
-                  BROWSERSTACK_VARIABLES: "--key $BROWSERSTACK_KEY --verbose 3"
+                  BROWSERSTACK_VARIABLES: "--key ${BROWSERSTACK_KEY} --verbose 3"
               artifacts:
                - test:
                    source: target/*

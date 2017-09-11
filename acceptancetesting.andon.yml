@@ -34,6 +34,9 @@ pipelines:
                 browserstack:
                   BROWSERSTACK_KEY: qcGwaiyQpFFibmBoyEp3
                   BROWSERSTACK_VARIABLES: "--key ${BROWSERSTACK_KEY} --verbose 3"
+                deploy_env:
+                  docker_compose:
+                    - "src/test/resources/docker-compose.yml"                
               artifacts:
                - test:
                    source: target/*
